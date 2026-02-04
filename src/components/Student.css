@@ -1,0 +1,257 @@
+/* Student Component Styles */
+.student-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.student-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.student-basic-info {
+  flex: 1;
+  min-width: 0; /* Allows text to truncate if needed */
+}
+
+.student-name {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.3;
+}
+
+.student-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+}
+
+.student-course,
+.student-year {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+.student-course {
+  background-color: #f0f8ff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #b3d9ff;
+}
+
+.student-year {
+  background-color: #f0fff0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #b3ffb3;
+}
+
+.expand-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+.expand-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.expand-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.expand-button:active {
+  transform: scale(0.95);
+}
+
+.expand-button.expanded {
+  background-color: #28a745;
+}
+
+.expand-button.expanded:hover {
+  background-color: #1e7e34;
+}
+
+.student-expanded-content {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+}
+
+.student-additional-info {
+  display: grid;
+  gap: 8px;
+}
+
+.student-additional-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.student-additional-info strong {
+  color: #333333;
+  font-weight: 600;
+}
+
+.student-id {
+  color: #666666;
+}
+
+.student-email {
+  color: #007bff;
+}
+
+.student-academic-info {
+  color: #28a745;
+}
+
+.student-course-full {
+  color: #6f42c1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-card {
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .student-header {
+    gap: 12px;
+  }
+  
+  .student-name {
+    font-size: 1.1rem;
+  }
+  
+  .student-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .student-course,
+  .student-year {
+    font-size: 0.85rem;
+  }
+  
+  .expand-button {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+  
+  .student-expanded-content {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  
+  .student-additional-info {
+    gap: 6px;
+  }
+  
+  .student-additional-info p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-card {
+    padding: 10px;
+  }
+  
+  .student-name {
+    font-size: 1rem;
+  }
+  
+  .student-details {
+    gap: 6px;
+  }
+  
+  .student-course,
+  .student-year {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .student-card {
+    border: 2px solid #000000;
+  }
+  
+  .expand-button {
+    border: 2px solid #ffffff;
+  }
+  
+  .student-course {
+    border: 2px solid #0066cc;
+  }
+  
+  .student-year {
+    border: 2px solid #009900;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .student-card,
+  .expand-button,
+  .student-expanded-content {
+    transition: none;
+    animation: none;
+  }
+  
+  .expand-button:hover {
+    transform: none;
+  }
+  
+  .expand-button:active {
+    transform: none;
+  }
+}
